@@ -20,10 +20,10 @@ const Portfolio_full = [
     title: "Amcaricola.com",
     alt: "Amcaricola.com",
     img: "/portafolio/amcaricolaWeb.png",
-    link: "https://www.amcaricola.com",
+    link: "https://github.com/amcaricola/amcaricola-web-3.0",
     year: 2023,
     description:
-      "Web de portafolio - Para mostrar y recopilar todos los proyectos y mostrar a clientes mi trabajo - Este enlace lleva al repositorio de Github de esta web (Astro Js - CSS - Javacript)",
+      "Web de portafolio - Creado para mostrar y recopilar todos los proyectos y mostrar a clientes mi trabajo - Este enlace lleva al repositorio de Github de esta web (Astro Js - CSS - Javacript)",
   },
   {
     title: "ArriendaAhora.cl",
