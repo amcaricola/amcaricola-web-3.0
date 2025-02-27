@@ -1,0 +1,53 @@
+---
+import { Portfolio_full } from "../../lib/portafolio_Db.js";
+import Portfolio_card from "../../components/Portfolio_card.astro";
+---
+
+<section data-scroll-spy id="portafolio" class="portafolio">
+  <h2 class="h2-title">Portafolio</h2>
+  <div id="card-portafolio-folder">
+    {
+      Portfolio_full.map(({ img, alt, title, year, description, link }) => (
+        <Portfolio_card
+          img={img}
+          alt={alt}
+          title={title}
+          year={year}
+          description={description}
+          link={link}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  /* Portafolio */
+  .h2-title {
+    font-size: 2rem;
+    align-self: center;
+  }
+  .portafolio {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 50px 0;
+  }
+
+  .more-btn {
+    text-decoration: none;
+    margin: 50px auto 0px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--darkblue);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .more-btn:hover {
+    background-color: var(--enfacis);
+    color: var(--darkblue);
+  }
+</style>

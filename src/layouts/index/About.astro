@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../../assets/portrait.jpg";
+---
+
+<!-- SECCION ABOUT -->
+<section data-scroll-spy class="about" id="about">
+  <div class="block-about">
+    <img src={portrait.src} alt="portrait" class="portrait" />
+  </div>
+
+  <div class="block-about">
+    <h2 class="h2-title-about">Anthony Caricola</h2>
+    <h4>FrontEnd Developer</h4>
+
+    <p>
+      <b>Programador</b> desde 2022, he trabajado con tecnologías WEB tanto en el
+      Back-End y Front-End, asi como tambien en desarrollo de videojuegos con Godot
+      Engine.
+    </p>
+
+    <div class="table-about">
+      <table>
+        <tr>
+          <td class="tableFocus">Nacimiento</td>
+          <td>26 de mayo de 1992</td>
+        </tr>
+        <tr>
+          <td class="tableFocus">Edad</td>
+          <td>30 Años</td>
+        </tr>
+
+        <tr>
+          <td class="tableFocus">Residencia</td>
+          <td>Chile - Santiago RM</td>
+        </tr>
+        <tr>
+          <td class="tableFocus">Nacionalidad</td>
+          <td>Italiano - Venezolano</td>
+        </tr>
+        <tr>
+          <td class="tableFocus">Email</td>
+          <td>amcaricola@gmail.com</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+<hr class="separator" />
+
+<!-- <div class="block-about-full"> --------------------- eliminar este div
+          <h2 class="h2-title">Conocimientos:</h2>-->
+<!-- Esto carga dinamicamente del archivo Conocimientos.js -->
+
+<!--<ul id="conocimientos"></ul>
+        </div> -->
+
+<style>
+  /* ABOUT */
+  .separator {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px;
+    width: 70vw;
+    border-bottom: thin solid var(--darkblue);
+  }
+
+  .h2-title {
+    font-size: 2rem;
+    align-self: center;
+  }
+  .about {
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .portrait {
+    align-self: center;
+    max-height: 70vh;
+    height: auto;
+    max-width: 70%;
+    box-shadow: -15px -15px var(--enfacis);
+    border: solid thin var(--darkblue);
+  }
+
+  .block-about {
+    padding: 5vw 5vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .block-about p {
+    text-align: justify;
+  }
+
+  .block-about h4 {
+    margin: 0;
+    color: var(--enfacis);
+  }
+
+  .table-about {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .tableFocus {
+    font-weight: bold;
+    border-right: thin solid var(--enfacis);
+  }
+
+  table {
+    text-align: justify;
+    margin: 15px 0;
+  }
+
+  table tr td {
+    padding: 5px;
+  }
+
+  .block-about-full {
+    padding: 25px 0;
+    display: block;
+    background-color: var(--darkblue);
+    color: var(--white);
+    width: 100vw;
+    text-align: center;
+  }
+
+  .block-about-full ul {
+    padding: 0 5vh;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .block-about-full ul li {
+    margin: 10px 0;
+    /* modificar este valor para corregir los conocimientos */
+    flex-basis: 14%;
+  }
+
+  .block-about-full ul li img {
+    width: 15vw;
+    max-width: 100px;
+    height: auto;
+  }
+
+  /* ABOUT media query */
+  @media (max-width: 1023px) {
+    .about {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .block-about {
+      padding: 35px 10vw 15px 10vw;
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    .block-about-full ul li {
+      margin: 10px 0;
+      flex-basis: 33%;
+    }
+  }
+</style>

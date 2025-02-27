@@ -1,0 +1,122 @@
+---
+import Hamburger from "./hamburgers.astro";
+
+const data = Astro.url.pathname;
+
+const home = data === "/" ? "link-Active" : "";
+const portafolio = data === "/portafolio/" ? "link-Active" : "";
+
+console.log(home, portafolio);
+---
+
+<nav>
+  <h1>AMCARICOLA</h1>
+  <div class="menu hamburger-menu">
+    <ul>
+      <li><a data-scroll-spy href="/" class={home}>Home</a></li>
+      <li>
+        <a data-scroll-spy href="/portafolio/" class={portafolio}>Portafolio</a>
+      </li>
+      <!-- <li><a data-scroll-spy href="#blog">Blog</a></li> -->
+    </ul>
+  </div>
+  <Hamburger />
+</nav>
+
+<style>
+  /* NAVBAR */
+
+  nav {
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    padding: 0 80px;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: var(--darkblue);
+    transition: background 0.3s ease;
+  }
+
+  .nav-active {
+    background-color: var(--darkblue);
+    box-shadow: 0 0 15px var(--darkblue);
+    border-bottom: thin solid #22242e;
+  }
+
+  nav h1 {
+    color: var(--white);
+    padding: 1vw;
+    font-size: 25px;
+  }
+
+  nav div ul {
+    margin: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  li a {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px;
+    transition: all 0.5s ease;
+  }
+
+  li a:hover {
+    color: var(--enfacis) !important;
+    text-decoration: underline;
+  }
+
+  .link-Active {
+    color: var(--enfacis) !important;
+  }
+
+  @media (max-width: 1023px) {
+    nav {
+      padding: 0 30px;
+    }
+    .menu {
+      position: fixed;
+      top: 10vh;
+      left: 0;
+      height: 90vh;
+      width: 50vw;
+      background-color: var(--darkblue);
+      z-index: 990;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .menu ul li {
+      padding: 15px 0;
+    }
+
+    .menu ul li a {
+      font-size: 2rem;
+    }
+  }
+</style>

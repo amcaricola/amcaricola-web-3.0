@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+const { title, alt, img, link, year, description } = Astro.props;
+---
+
+<a href={link} class="card-portafolio" target="_blank" rel="noopener">
+  <img loading="lazy" src={img} alt={alt} />
+  <div>
+    <h3>{title} <small>{year}</small></h3>
+    <p>{description}</p>
+  </div>
+</a>
+
+<style>
+  .card-portafolio {
+    height: 150px;
+    max-height: 150px;
+    text-decoration: none;
+    color: #000;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 20px;
+    width: 70vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    border-bottom: thin solid var(--enfacis);
+    transition: background 0.5s ease;
+  }
+
+  .card-portafolio:hover {
+    background-color: var(--enfacis);
+  }
+
+  .card-portafolio img {
+    flex-basis: 20%;
+    max-width: 100px;
+    width: 10vh;
+    height: fit-content;
+    margin: auto;
+    padding: 15px;
+  }
+
+  .card-portafolio div {
+    flex-basis: 80%;
+    padding: 0 25px;
+  }
+
+  .card-portafolio div h3 {
+    margin: 16px 0;
+  }
+
+  .card-portafolio div h3 small {
+    font-weight: normal;
+  }
+
+  .card-portafolio div p {
+    margin: 0 0 16px 0;
+  }
+
+  /* PORTAFOLIO media query */
+  @media (max-width: 1023px) {
+    .card-portafolio {
+      width: 85vw;
+      /* flex-direction: column; */
+    }
+
+    .card-portafolio div {
+      padding: 0 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .card-portafolio {
+      flex-direction: column;
+    }
+  }
+</style>

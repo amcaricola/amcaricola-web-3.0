@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import favicom from "../assets/favicon.png";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>"Anthony Caricola | Programador"</title>
+    <meta
+      name="description"
+      content="Programador desde 2022, he trabajado con tecnologías WEB tanto en el Back-End y Front-End, asi como tambien en desarrollo de videojuegos con Godot Engine."
+    />
+    <link rel="shortcut icon" href={favicom.src} type="image/x-icon" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  :root {
+    --white: #f3f3f4; /*bg color */
+    --darkblue: #0e131f; /*complementary color */
+    --enfacis: #fc7a1e; /*dark color */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+  }
+
+  html,
+  body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .header,
+  .portafolio,
+  .contact,
+  .about,
+  .blog,
+  footer {
+    margin: 0;
+  }
+</style>

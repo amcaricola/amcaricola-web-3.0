@@ -1,0 +1,159 @@
+---
+import { Image } from "astro:assets";
+import linkedin_logo from "../../assets/linkedin.png";
+import github_logo from "../../assets/github.png";
+import Nav from "../../components/nav.astro";
+---
+
+<!-- HEADER -->
+<Nav />
+<section data-scroll-spy class="header" id="inicio">
+  <div class="h3-header-Title">
+    <h3>Bienvenido!</h3>
+    <h3>Soy Anthony Caricola</h3>
+  </div>
+  <div class="h3-header-changingWords">
+    <h3 id="changingWords">Web Developer</h3>
+  </div>
+
+  <div class="rrss-header">
+    <h4>Más acerca de mi!</h4>
+    <div>
+      <a
+        href="https://www.linkedin.com/in/anthony-caricola/"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src={linkedin_logo.src} alt="link a linkedin" />
+      </a>
+
+      <a href="https://github.com/amcaricola" target="_blank" rel="noopener">
+        <img src={github_logo.src} alt="link a github" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  let d = document;
+  function ChangingWords() {
+    let $words = d.querySelector("#changingWords") || null;
+    let word1 = "Web Developer";
+    let word2 = "Game Developer";
+    let transfer = $words?.textContent || word1;
+    let disminuir = false;
+
+    let number = $words?.textContent?.length || 0;
+    let wait = 1500;
+
+    setInterval(() => {
+      if (number == transfer?.length) disminuir = true;
+
+      if (wait != 100) {
+        wait -= 100;
+        return;
+      }
+
+      if (disminuir) {
+        number -= 1;
+        if ($words) $words.textContent = transfer.substring(0, number);
+        if (number == 0) {
+          disminuir = false;
+          wait = 400;
+          transfer === word1 ? (transfer = word2) : (transfer = word1);
+        }
+      } else {
+        number += 1;
+        if ($words) $words.textContent = transfer.substring(0, number);
+        if (number == transfer?.length) wait = 2400;
+      }
+    }, 80);
+  }
+
+  ChangingWords();
+</script>
+
+<style>
+  /* HEADER */
+
+  .header {
+    position: relative;
+    height: 100vh;
+    background-image: url("../../assets/coding.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header h3 {
+    color: white;
+    padding: 0 10vw;
+    font-size: 70px;
+    margin: 10px 0;
+  }
+
+  .h3-header-changingWords {
+    height: 20px;
+  }
+
+  #changingWords {
+    color: var(--enfacis);
+  }
+
+  .rrss-header {
+    position: absolute;
+    right: 100px;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rrss-header h4 {
+    color: var(--white);
+    font-size: 2rem;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .rrss-header div a img {
+    filter: drop-shadow(0 0 5px var(--darkblue));
+    height: 55px;
+    width: 55px;
+    padding: 0 10px;
+  }
+
+  .rrss-header div a img:hover {
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0 0 10px var(--enfacis));
+  }
+
+  /* NAVEGACION MENU media query */
+
+  @media (max-width: 1023px) {
+    .rrss-header {
+      left: 0;
+      right: 0;
+
+      bottom: 35px;
+    }
+
+    .rrss-header h4 {
+      display: none;
+    }
+
+    .header h3 {
+      font-size: 48px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .header h3 {
+      font-size: 30px;
+    }
+  }
+</style>

@@ -1,0 +1,61 @@
+<footer class="footer">
+  <p>En estas redes puedes saber más sobre mi:</p>
+  <div>
+    <a
+      href="https://www.linkedin.com/in/anthony-caricola/"
+      target="_blank"
+      rel="noopener"
+    >
+      <p>LinkedIn</p></a
+    >
+
+    <a href="https://github.com/amcaricola/" target="_blank" rel="noopener"
+      ><p>GitHub</p></a
+    >
+  </div>
+</footer>
+
+<style>
+  /* FOOTER */
+
+  footer {
+    background-color: var(--darkblue);
+    height: 75px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+  }
+
+  footer div {
+    width: 25vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  footer div a {
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  footer div a:hover {
+    transition: all 0.2s ease-in-out;
+    color: var(--enfacis);
+  }
+
+  /*FOOTER*/
+  @media (max-width: 600px) {
+    footer {
+      justify-content: center;
+    }
+
+    footer > p {
+      display: none;
+    }
+
+    footer div {
+      width: 70vw;
+    }
+  }
+</style>

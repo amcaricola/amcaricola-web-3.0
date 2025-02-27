@@ -1,0 +1,82 @@
+---
+import { Portfolio_full } from "../../lib/portafolio_Db.js";
+import Portfolio_card from "../../components/Portfolio_card.astro";
+
+const P0 = Portfolio_full[0];
+const P1 = Portfolio_full[1];
+const P2 = Portfolio_full[2];
+---
+
+<section data-scroll-spy id="portafolio" class="portafolio">
+  <h2 class="h2-title">Ultimas entradas del Portafolio</h2>
+  <div id="card-portafolio-folder">
+    {
+      P0 ? (
+        <Portfolio_card
+          img={P0.img}
+          alt={P0.alt}
+          title={P0.title}
+          year={P0.year}
+          description={P0.description}
+          link={P0.link}
+        />
+      ) : null
+    }
+    {
+      P1 ? (
+        <Portfolio_card
+          img={P1.img}
+          alt={P1.alt}
+          title={P1.title}
+          year={P1.year}
+          description={P1.description}
+          link={P1.link}
+        />
+      ) : null
+    }
+    {
+      P2 ? (
+        <Portfolio_card
+          img={P2.img}
+          alt={P2.alt}
+          title={P2.title}
+          year={P2.year}
+          description={P2.description}
+          link={P2.link}
+        />
+      ) : null
+    }
+  </div>
+  <a class="more-btn" href="/portafolio/">Ver más</a>
+</section>
+
+<style>
+  /* Portafolio */
+  .h2-title {
+    font-size: 2rem;
+    align-self: center;
+  }
+  .portafolio {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 50px 0;
+  }
+
+  .more-btn {
+    text-decoration: none;
+    margin: 50px auto 0px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--darkblue);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .more-btn:hover {
+    background-color: var(--enfacis);
+    color: var(--darkblue);
+  }
+</style>
